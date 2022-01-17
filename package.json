@@ -1,6 +1,6 @@
 {
   "name": "nano-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin": "./bin/cli.js",
   "main": "server.js",
