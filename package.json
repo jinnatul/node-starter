@@ -1,7 +1,8 @@
 {
-  "name": "node-temp",
-  "version": "1.0.0",
+  "name": "create-node-temp",
+  "version": "1.0.1",
   "description": "",
+  "bin": "./bin/cli.js",
   "main": "server.js",
   "scripts": {
     "start": "env-cmd -f .env.production babel-node ./src/server.js",
