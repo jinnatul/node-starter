@@ -1,6 +1,6 @@
 {
-  "name": "create-node-temp",
-  "version": "1.0.1",
+  "name": "nano-app",
+  "version": "1.0.0",
   "description": "",
   "bin": "./bin/cli.js",
   "main": "server.js",
