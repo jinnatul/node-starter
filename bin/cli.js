@@ -16,13 +16,14 @@ const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/jinnatul/nano-app ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
-console.log(`Cloning the repository with name ${repoName}`);
+console.log(`\n\033[33m Cloning the repository with name ${repoName}\n`);
 const CheckedOut = RunCommand(gitCheckoutCommand);
 if (!CheckedOut) process.exit(-1);
 
-console.log(`Installing dependencies for ${repoName}`);
+console.log(`\033[31m Installing dependencies for ${repoName}\n\n`);
 const InstalledDeps = RunCommand(installDepsCommand);
 if (!InstalledDeps) process.exit(-1);
 
-console.log(`Congratulations! You are ready.`)
-console.log(`cd ${repoName} && npm run dev`);
+console.log(`\033[32m Congratulations! You are ready.\n\n`)
+console.log(`\033[35m Dev -> cd ${repoName} && npm run dev\n`);
+console.log(`\033[31m Prod -> cd ${repoName} && npm start`);
