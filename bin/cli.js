@@ -15,18 +15,14 @@ const RunCommand = (command) => {
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/jinnatul/nano-app ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
-const removeGitCommand = `rm -rf .git`;
 
-console.log(`\n${"\033[36m"} Cloning the repository with name ${repoName}\n`);
+console.log(`\n\n${"\033[32m"} Creating a new Node app in ${__dirname}.\n\n`);
 const CheckedOut = RunCommand(gitCheckoutCommand);
 if (!CheckedOut) process.exit(-1);
 
 console.log(`\n${"\033[31m"} Installing dependencies for ${repoName}\n`);
 const InstalledDeps = RunCommand(installDepsCommand);
 if (!InstalledDeps) process.exit(-1);
-
-const RemoveGit = RunCommand(removeGitCommand);
-if (!RemoveGit) process.exit(-1);
 
 console.log(`\n${"\033[32m"} Congratulations! You are ready.`)
 console.log(`\n${"\033[33m"} This node.js template maintained by Morol`);
