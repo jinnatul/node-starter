@@ -1,6 +1,6 @@
 {
   "name": "nano-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "bin": "./bin/cli.js",
   "main": "server.js",
@@ -8,6 +8,21 @@
     "start": "env-cmd -f .env.production babel-node ./src/server.js",
     "dev": "env-cmd -f .env.development nodemon ./src/server.js --exec babel-node"
   },
+  "keywords": [
+    "nodejs", 
+    "project", 
+    "javascript",
+    "template",
+    "boilerplate",
+    "node-temp",
+    "node-template",
+    "node-boilerplate",
+    "generator",
+    "express",
+    "express-generator",
+    "express-template",
+    "express-boilerplate"
+  ],
   "author": "Morol",
   "license": "ISC",
   "dependencies": {
