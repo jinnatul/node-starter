@@ -32,9 +32,7 @@ Everyone can easily be creating a node.js application structure using a single l
 
 ## Template working process
 - ### Create & Install Dependencies
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/31995155/150692740-b7f8d66a-d230-428f-b7a9-10a0720bf142.gif' height='600' weight='1500'>
-</p>
+[![Demo]](https://user-images.githubusercontent.com/31995155/185107105-5df974f9-ccf0-467d-a365-5225e8d017eb.mp4)
 
 - ### Email verification using OTP
 <p align='center'>
