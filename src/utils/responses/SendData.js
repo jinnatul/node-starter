@@ -1,5 +1,5 @@
-const SendData = (res, data) => {
-  res.status(200).json({
+const SendData = (res, data, status) => {
+  res.status(status ? status : 200).json({
     status: 'ok',
     data,
   });

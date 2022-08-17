@@ -12,7 +12,7 @@ const AuthorizedUser = async (req, res, next) => {
 
   let decodedToken;
   try {
-    decodedToken = jwt.verify(token, process.env.TokenCode);
+    decodedToken = jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
     if (error.message === "jwt expired") {
       error.message = "Session Expired";
@@ -28,8 +28,7 @@ const AuthorizedUser = async (req, res, next) => {
   }
 
   // Grant access to protect route
-  const { id } = decodedToken;
-  req.user = id;
+  req.user = decodedToken;
   req.token = token;
   return next();
 };

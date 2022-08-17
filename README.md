@@ -14,20 +14,38 @@ I am so happy to share with you all for publishing my own node.js template as a 
 Everyone can easily be creating a node.js application structure using a single line command.
 
 ## Features:
-- ES6 configuration (Babel)
+- ES6+ configuration (Babel)
 - Better error handling
 - Clean code structure
-- Secure authentication middleware
-- Modern data validation 
+- Google authentication (Pasport strategy)
+- Email authentication with OTP verification (Sent mail using google gmail)
+- Implement MFA using speakeasy
+- MFA QR code images store in cloudinary
+- Forgot Password via mail
+- Modern data validation using Joi
+- Forgot password mail template
+- OTP validation mail template
 
 ### Download and usage
 - Command: `npx nano-app project-name`
 - Example: `npx nano-app nodejs-api`
 
-## Demo Video
+## Template working process
+- ### Create & Install Dependencies
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/31995155/150692740-b7f8d66a-d230-428f-b7a9-10a0720bf142.gif' height='600' weight='1500'>
 </p>
+
+- ### Email verification using OTP
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/31995155/185088738-7a3693ae-e5d0-46d3-9a4d-037600a52737.png' height='600' weight='600'>
+</p>
+
+- ### Reset password
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/31995155/185089586-8d4fee43-b8c1-44c1-aa2d-b0d0628c1feb.png' height='600' weight='500'>
+</p>
+
 
 ### My main purpose is to motivated 👨‍💻 developer 👨‍💻
 
