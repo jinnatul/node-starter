@@ -10,17 +10,17 @@
 
 ## Introduction
 
-I am so happy to share with you all for publishing my own node.js template as a command-line format.
+I am so happy to share with you all, publishing my own node.js template in a command-line format.
 Everyone can easily be creating a node.js application structure using a single line command.
 
 ## Features:
 - ES6+ configuration (Babel)
 - Better error handling
 - Clean code structure
-- Google authentication (Pasport strategy)
-- Email authentication with OTP verification (Sent mail using google gmail)
+- Google authentication (Passport strategy)
+- Email authentication with OTP verification (Sent mail using Google Gmail)
 - Implement MFA using speakeasy
-- MFA QR code images store in cloudinary
+- MFA QR code images stored in Cloudinary
 - Forgot Password via mail
 - Modern data validation using Joi
 - Forgot password mail template
@@ -32,7 +32,7 @@ Everyone can easily be creating a node.js application structure using a single l
 
 ## Template working process
 - ### Create & Install Dependencies
-[![Demo]](https://user-images.githubusercontent.com/31995155/185107105-5df974f9-ccf0-467d-a365-5225e8d017eb.mp4)
+[![Demo Video]](https://user-images.githubusercontent.com/31995155/185107105-5df974f9-ccf0-467d-a365-5225e8d017eb.mp4)
 
 - ### Email verification using OTP
 <p align='center'>
