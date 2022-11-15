@@ -3,6 +3,7 @@ import sequelize from './config/Database';
 
 // Db connection
 sequelize
+    // .sync()
     .authenticate()
     .then(() => {
         console.log('Connection has been established successfully.');
