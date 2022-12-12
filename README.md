@@ -26,24 +26,13 @@ Everyone can easily be creating a node.js application structure using a single l
 - Forgot password mail template
 - OTP validation mail template
 
-### Download and usage
-- Command: `npx nano-app project-name`
-- Example: `npx nano-app nodejs-api`
+### Download and usage (Please use latest version)
+- Command: `npx nano-app@1.2.3 project-name`
+- Example: `npx nano-app@1.2.3 nodejs-api`
 
 ## Template working process
 - ### Create & Install Dependencies
 [![Demo Video]](https://user-images.githubusercontent.com/31995155/185107105-5df974f9-ccf0-467d-a365-5225e8d017eb.mp4)
-
-- ### Email verification using OTP
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/31995155/185088738-7a3693ae-e5d0-46d3-9a4d-037600a52737.png' height='600' weight='600'>
-</p>
-
-- ### Reset password
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/31995155/185089586-8d4fee43-b8c1-44c1-aa2d-b0d0628c1feb.png' height='600' weight='500'>
-</p>
-
 
 ### My main purpose is to motivated 👨‍💻 developer 👨‍💻
 
