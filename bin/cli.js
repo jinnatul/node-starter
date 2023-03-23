@@ -17,7 +17,8 @@ const RunCommand = (command) => {
   const qus1 = new Select({
     name: "color",
     message: "Select language",
-    choices: ["JavaScript", "TypeScript"],
+    choices: ["JavaScript"],
+    // choices: ["JavaScript", "TypeScript"],
   });
 
   const qus2 = new Select({
@@ -26,17 +27,18 @@ const RunCommand = (command) => {
     choices: ["ES5", "ES6+"],
   });
 
-  const qus3 = new Confirm({
-    name: "question",
-    message: "Do you want to configure ESLint?",
-  });
+  // const qus3 = new Confirm({
+  //   name: "question",
+  //   message: "Do you want to configure ESLint?",
+  // });
 
   let sourceName = "";
   const ans1 = await qus1.run();
   if (ans1 === "JavaScript") {
     const ans2 = await qus2.run();
-    const ans3 = await qus3.run();
-    sourceName = `${ans2}${ans3 ? "_ESLint" : ""}`;
+    // const ans3 = await qus3.run();
+    // sourceName = `${ans2}${ans3 ? "_ESLint" : ""}`;
+    sourceName = `${ans2}`;
   } else {
     sourceName = `TS`;
   }
