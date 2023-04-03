@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { execSync } = require("child_process");
-const { Select, Confirm } = require("enquirer");
+const { Select } = require("enquirer");
 
 const RunCommand = (command) => {
   try {
@@ -18,7 +18,6 @@ const RunCommand = (command) => {
     name: "color",
     message: "Select language",
     choices: ["JavaScript"],
-    // choices: ["JavaScript", "TypeScript"],
   });
 
   const qus2 = new Select({
@@ -27,18 +26,18 @@ const RunCommand = (command) => {
     choices: ["ES5", "ES6+"],
   });
 
-  // const qus3 = new Confirm({
-  //   name: "question",
-  //   message: "Do you want to configure ESLint?",
-  // });
+  const qus3 = new Select({
+    name: "color",
+    message: "Which package manager do you need?",
+    choices: ["npm", "yarn"],
+  });
 
   let sourceName = "";
   const ans1 = await qus1.run();
   if (ans1 === "JavaScript") {
     const ans2 = await qus2.run();
-    // const ans3 = await qus3.run();
-    // sourceName = `${ans2}${ans3 ? "_ESLint" : ""}`;
-    sourceName = `${ans2}`;
+    const ans3 = await qus3.run();
+    sourceName = `${ans3 === "yarn" ? "YARN_" : ""}${ans2}`;
   } else {
     sourceName = `TS`;
   }

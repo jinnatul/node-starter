@@ -1,13 +1,8 @@
 {
   "name": "nano-app",
-  "version": "1.2.4",
+  "version": "2.0.0",
   "description": "",
   "bin": "./bin/cli.js",
-  "main": "server.js",
-  "scripts": {
-    "start": "env-cmd -f .env.production babel-node ./src/server.js",
-    "dev": "env-cmd -f .env.development nodemon ./src/server.js --exec babel-node"
-  },
   "keywords": [
     "nodejs",
     "project",
