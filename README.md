@@ -8,12 +8,71 @@
 
 </div>
 
-## Introduction
 
-I am so happy to share with you all, publishing my own node.js template in a command-line format.
-Everyone can easily be creating a node.js application structure using a single line command.
+# Node Starter
 
-## Features:
+**Node-starter** is a command-line application, here you can easily create your node.js project structure.
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npx nano-app my-project
+  cd my-project
+```
+
+It will create a directory called my-project inside the current folder.
+Inside that directory, it will generate the initial project structure and install the transitive dependencies:
+
+```
+my-project
+├── package.json
+├── package-lock.json
+├── .prettierrc
+├── .prettierignore
+├── .gitignore
+├── .env.production
+├── .env.development
+├── .babelrc
+├── node_modules
+└── src
+    ├── config
+        ├── cloudinary.js
+        ├── database.js
+        ├── passport.js
+        └── sendEmail.js
+    ├── controllers
+        └── authController.js
+    ├── middlewares
+        ├── authorizedUser.js
+        └── google.js
+    ├── models
+        ├── auditLogs.js
+        ├── userRoleMaps.js
+        ├── users.js
+        └── validations.js
+    ├── routes
+        ├── authRouter.js
+        └── router.js
+    ├── utils
+        ├── errors
+            └── globalErrorHandler.js
+        ├── responses
+            ├── sendData.js
+            ├── sendMessage.js
+            └── sendResponse.js
+        ├── templates
+            ├── forgotMail.js
+            └── signUpMail.js
+        ├── createJWT.js
+        └── createMFA.js
+    ├── app.js
+    └── server.js
+```
+## Features
+
 - ES6+ configuration (Babel)
 - Better error handling
 - Clean code structure
@@ -26,22 +85,213 @@ Everyone can easily be creating a node.js application structure using a single l
 - Forgot password mail template
 - OTP validation mail template
 
-### Download and usage (Please use latest version)
-- Command: `npx nano-app@1.2.3 project-name`
-- Example: `npx nano-app@1.2.3 nodejs-api`
 
-## Template working process
-- ### Create & Install Dependencies
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env.development (Development mode) or .env.production (Production mode) file
+
+- `DB_NAME`
+- `DB_USER`
+- `DB_PASS`
+- `HOST`
+- `SCHEMA`
+
+If you want to store MFA QR code at [Cloudinary](https://cloudinary.com)
+
+- `CLOUD_NAME`
+- `CLOUD_KEY`
+- `CLOUD_SECRET`
+
+If you want to use google login [Google console](https://console.cloud.google.com)
+
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
+- `GOOGLE_CALLBACK_URL`
+
+If you want to use email verification
+
+- `EMAIL`
+- `EMAIL_PASS` (App password)
+
+
+
+## API Reference
+
+### Google Log In
+
+```http
+  Redirect /api/v1/auth/google
+```
+For google login you need to set your `FrontEnd URL` at .env.development or .env.production [`FRONT_END`]
+
+### Sign Up
+
+```http
+  POST /api/v1/auth/signup
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `f_name` | `string` | **Required**. Your first name |
+| `l_name` | `string` | **Required**. Your last name |
+| `email` | `string` | **Required**. Your email |
+| `phone` | `string` | **Required**. Your phone number |
+| `password` | `string` | **Required**. Your password |
+
+
+### Sign In
+
+```http
+  POST /api/v1/auth/signin
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required**. Your email |
+| `password` | `string` | **Required**. Your password |
+
+
+### Resent OTP
+
+```http
+  POST /api/v1/auth/resent-otp
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required**. Your email |
+
+
+### Verify OTP
+
+```http
+  POST /api/v1/auth/verify-otp
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required**. Your email |
+| `otp` | `string` | **Required**. Your otp |
+
+
+### Verify MFA
+
+```http
+  POST /api/v1/auth/verify-mfa
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `int` | **Required**. Your user id |
+| `token` | `string` | **Required**. Your mfa token |
+
+
+### Forgot Password
+
+```http
+  POST /api/v1/auth/forgot-password
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required**. Your email |
+
+
+### Reset Password
+
+```http
+  POST /api/v1/auth/reset-password
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `reset_link` | `string` | **Required**. Reset link |
+| `password` | `string` | **Required**. Your password |
+
+
+### Get Profile
+
+```http
+  GET /api/v1/auth/profile
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Authorization` | `string` | **Required**. Your JWT token |
+
+
+## Run Locally
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run start
+```
+
+
+## Usage/Examples
+
+```
+npx nano-app api
+```
+
+![Part 1](https://user-images.githubusercontent.com/31995155/229435619-70b424ca-d867-4dae-8212-5f107e42e0bb.png)
+
+![Part 2](https://user-images.githubusercontent.com/31995155/229435818-5a6aa443-ad4c-4179-9b30-59ac7e89ac13.png)
+
+
+![Part 3](https://user-images.githubusercontent.com/31995155/229435893-6517d7de-0e27-44bc-880f-b2f0e9be397a.png)
+## Demo
+
+Insert gif or link to demo
+
 [![Demo Video]](https://user-images.githubusercontent.com/31995155/185107105-5df974f9-ccf0-467d-a365-5225e8d017eb.mp4)
 
-### My main purpose is to motivated 👨‍💻 developer 👨‍💻
 
-## Contributors
-<table>
-<tr>
-<td align="center"><a href="https://jinnatul.github.io"><img src="https://avatars0.githubusercontent.com/jinnatul" width="100px;" alt=""/><br /><sub><b>Jinnatul Islam</b></sub></a><br /><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/jinnatul_md?label=follow&style=social"></td>
-</tr>
-</table>
+## Tech Stack
+
+**Server:** Node, Express
+
+
+## Authors
+
+- [@jinnatul](https://www.github.com/jinnatul)
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at morolswediu@gmail.com
+
+
+
+
+## Support
+
+For support, email morolswediu@gmail.com
+
+
+## License
+
+[MIT](https://github.com/jinnatul/node-starter/blob/master/LICENSE)
+
+
 
 If you like, Give a star ⭐
 
