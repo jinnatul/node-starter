@@ -121,14 +121,14 @@ If you want to use email verification
 
 ### Google Log In
 
-```http
+```
   Redirect /api/v1/auth/google
 ```
 For google login you need to set your `FrontEnd URL` at .env.development or .env.production [`FRONT_END`]
 
 ### Sign Up
 
-```http
+```
   POST /api/v1/auth/signup
 ```
 
@@ -143,7 +143,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Sign In
 
-```http
+```
   POST /api/v1/auth/signin
 ```
 
@@ -155,7 +155,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Resent OTP
 
-```http
+```
   POST /api/v1/auth/resent-otp
 ```
 
@@ -166,7 +166,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Verify OTP
 
-```http
+```
   POST /api/v1/auth/verify-otp
 ```
 
@@ -178,7 +178,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Verify MFA
 
-```http
+```
   POST /api/v1/auth/verify-mfa
 ```
 
@@ -190,7 +190,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Forgot Password
 
-```http
+```
   POST /api/v1/auth/forgot-password
 ```
 
@@ -201,7 +201,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Reset Password
 
-```http
+```
   POST /api/v1/auth/reset-password
 ```
 
@@ -213,7 +213,7 @@ For google login you need to set your `FrontEnd URL` at .env.development or .env
 
 ### Get Profile
 
-```http
+```
   GET /api/v1/auth/profile
 ```
 
