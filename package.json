@@ -1,6 +1,6 @@
 {
   "name": "nano-app",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Set up a modern node.js api service by running one command",
   "bin": "./bin/cli.js",
   "keywords": [
@@ -22,7 +22,6 @@
     "type": "git",
     "url": "git+https://github.com/jinnatul/node-starter.git"
   },
-  "homepage": "https://github.com/jinnatul/node-starter#readme",
   "author": "Morol",
   "license": "ISC",
   "dependencies": {
